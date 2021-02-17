@@ -27,7 +27,7 @@ if ($con -> connect_errno) {
 define("BASEURL","http://localhost/webdev-base-webshop/");
 define("BASEURL_CMS","http://localhost/webdev-base-webshop/admin/");
 
-function prettyBug ( $var ){
+function prettyBug ( $var ) {
     echo "<pre>";
     var_dump($var);
     echo "</pre>";
