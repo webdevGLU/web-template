@@ -5,8 +5,8 @@
         //default user: test@test.nl
         //default password: test123
         $email = $con->real_escape_string($_POST['email']);
-        
-        $liqry = $con->prepare("SELECT id,email FROM admin_user WHERE email = ? LIMIT 1;");
+
+        $liqry = $con->prepare("SELECT admin_user_id,email FROM admin_user WHERE email = ? LIMIT 1;");
         if($liqry === false) {
            echo mysqli_error($con);
         } else{
@@ -21,7 +21,7 @@
 
                     $url = BASEURL_CMS.'verify_password.php?token='.$token;
                     
-                    $query1 = $con->prepare("UPDATE admin_user SET password_token = ? WHERE id = ? LIMIT 1;");
+                    $query1 = $con->prepare("UPDATE admin_user SET password_token = ? WHERE admin_user_id = ? LIMIT 1;");
                     if ($query1 === false) {
                         echo mysqli_error($con);
                     }

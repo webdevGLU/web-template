@@ -7,7 +7,7 @@
         $email = $con->real_escape_string($_POST['email']);
         $password = $con->real_escape_string($_POST['password']);
         
-        $liqry = $con->prepare("SELECT id,email,password FROM admin_user WHERE email = ? LIMIT 1;");
+        $liqry = $con->prepare("SELECT admin_user_id,email,password FROM admin_user WHERE email = ? LIMIT 1;");
         if($liqry === false) {
             trigger_error(mysqli_error($con));
         } else{

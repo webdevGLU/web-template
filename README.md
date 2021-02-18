@@ -1,14 +1,10 @@
 # Basis webshop voor lessen webshop bouwen
 
-# Starten van applicatie
+## Starten van applicatie
 
 In de **database** map staan een __webshop.sql__
 
 Zorg dat je lokaal dit bestand in een database **webshop** hebt geimporteerd.
-
-```
-
-```
 
 ## Mappenstructuur
 
@@ -24,4 +20,5 @@ Zorg dat je lokaal dit bestand in een database **webshop** hebt geimporteerd.
 - ***functions***
     - Hier komen de _functions_ van de webshop in te staan. Denk hierbij aan het ophalen van producten of het plaatsen van een bestelling.
 
- 
+ ## Code conventions
+Link notion: https://www.notion.so/Code-afspraken-cb7f9788b9ae46dfa782545ec3aec572
