@@ -2,9 +2,9 @@
 
 ## Starten van applicatie
 
-In de **database** map staan een __webshop.sql__
+In de **database** map staan een __website.sql__
 
-Zorg dat je lokaal dit bestand in een database **webshop** hebt geimporteerd.
+Zorg dat je lokaal dit bestand in een database **website** hebt geimporteerd.
 
 ## Mappenstructuur
 
@@ -17,8 +17,12 @@ Zorg dat je lokaal dit bestand in een database **webshop** hebt geimporteerd.
     - In dit mapje staat de database connectie.
     - De header en de footer van de HTML voorkant.
     - **admin/core** bevat nog een checklogin function file. 
-- ***functions***
-    - Hier komen de _functions_ van de webshop in te staan. Denk hierbij aan het ophalen van producten of het plaatsen van een bestelling.
+- ***model***
+    - Hier komen de _models of functions_ van de website in te staan. Denk hierbij aan het ophalen van producten of het ophalen van website data.
 
- ## Code conventions
-Link notion: https://www.notion.so/Code-afspraken-cb7f9788b9ae46dfa782545ec3aec572
+ ## Werking
+
+ - in __router.php__ staat de url structuur van de website. Heb je een nieuwe url, dan kan je daar in een _case_ toevoegen.
+    -- Zorg ervoor dat je in ieder geval een _$model_ en een _$template_ aanmaakt
+    -- Maak in __views__ map een `.mustache` file aan met de naam van de variabel _$template_
+    -- Maak in __models__ map een `.php` file aan met de naam van de variabel _$model_
