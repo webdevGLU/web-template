@@ -1,4 +1,4 @@
-# Basis webshop voor lessen webshop bouwen
+# Basis website met Template ENGINE Mustache
 
 ## Starten van applicatie
 
