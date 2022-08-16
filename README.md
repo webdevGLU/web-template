@@ -6,6 +6,9 @@ In de **database** map staan een __website.sql__
 
 Zorg dat je lokaal dit bestand in een database **website** hebt geimporteerd.
 
+Zorg dat je het volgende commando kan runnen op je computer:
+`composer install`
+
 ## Mappenstructuur
 
 - ***admin*** 
