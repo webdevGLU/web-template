@@ -37,3 +37,8 @@ function dd ( $var, $die = false ) {
         exit();
     }
 }
+
+function mes($value){
+    global $con;
+    return $con->real_escape_string($value);
+}

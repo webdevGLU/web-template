@@ -1,47 +1,8 @@
 <?php
-    include('core/db_connect.php');
+    include("core/db_connect.php");
+    include("core/router.php");
 
-    $view = '';
-    if(!empty($_GET['view'])){
-        $view = mes($_GET['view']);
-        $view = str_replace("/","",$view);
-    }
-
-    switch($view){
-        case '':
-            $template = "main";
-            break;
-        case 'products':
-            $template = "products";
-            break;
-      
-        default:
-            $template = "main";
-            break;
-    }
-
-    $model = [
-        "name" => "Yolo Baggins",
-        "title" => "I'm Title",
-        "permalink" => "blog/",
-        "foo" => "bar",
-        "article" => [
-            "title" => "My Article Title"
-        ],
-        "posts" => [
-            [
-                "title" => "Post #1",
-                "id" => 1,
-                "content" => "Content"
-            ],
-            [
-                "title" => "Post 2",
-                "id" => 2,
-                "content" => "Content"
-            ]
-        ]
-    ];
-
+    include("model/{$model}.php");
 
     //render mustache templates 
     $mustache = new Mustache_Engine(array(
@@ -66,13 +27,13 @@
     // echo $m->render('Hello, {{planet}}!', array('planet' => 'World')); // "Hello, World!"
 
     $headertpl = $mustache->loadTemplate('header'); // loads __DIR__.'/views/foo.mustache';
-    echo $headertpl->render($model);   
+    echo $headertpl->render($data);   
 
     $tpl = $mustache->loadTemplate($template); // get $template from router
-    echo $tpl->render($model); 
+    echo $tpl->render($data); 
 
     $footertpl = $mustache->loadTemplate('footer'); // loads __DIR__.'/views/foo.mustache';
-    echo $footertpl->render($model);   
+    echo $footertpl->render($data);   
 
 
     $con->close();
